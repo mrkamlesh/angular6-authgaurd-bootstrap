@@ -1,0 +1,47 @@
+<!-- <nav>
+  <a routerLink="/Product">Dashboard</a>
+  <a routerLink="/Inventory">Heroes</a>
+
+  <a *ngIf="!auth.isLoggednIn()" routerLink="/register">Register</a>
+  <a *ngIf="!auth.isLoggednIn()" routerLink="/login">Login</a>
+  <a *ngIf="auth?.isLoggednIn()" (click)="auth?.logout()" routerLink="/login">Logout</a>
+
+</nav> -->
+
+
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+  <h5 class="my-0 mr-md-auto font-weight-normal" (click)="goHome()">My Demo</h5>
+
+  <nav id="navbar-example2" class="my-2 my-md-0 mr-md-3">
+
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Product">Product</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/Inventory">Inventory</a>
+      </li>
+    </ul>
+
+  </nav>
+  <a href="JavaScript:void(0);" class="btn btn-primary" *ngIf="auth?.isLoggednIn()" (click)="openModal(template)">Logout</a>
+</div>
+
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Logout Confirm</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    Are you sure you want to log out?
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">No</button>
+    <button type="button" class="btn btn-primary" (click)="logout()">Yes</button>
+  </div>
+</ng-template>

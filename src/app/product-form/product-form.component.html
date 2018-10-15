@@ -1,0 +1,18 @@
+<div class="container">
+  <div>
+    The percentage is {{newValue | percent:'2.2-5'}}<br> 
+ </div>
+  <h1>Product Form</h1>
+  
+  <form>
+    <div class="form-group">
+      <label for="productid">ID</label>
+      <input type="text" class="form-control" id="productid" required [(ngModel)]="model.productid" name="id">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="model.productname" name="name">
+    </div>
+  </form>
+</div>

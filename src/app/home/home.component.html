@@ -1,0 +1,44 @@
+<p>Multiplier: {{2 | multiplier: 10}}</p>
+
+
+<nav id="navbar-example2" class="navbar navbar-light bg-light">
+    <ul class="nav nav-pills">
+
+        <li class="nav-item dropdown" dropdown>
+            <a dropdownToggle class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                aria-haspopup="true" aria-expanded="false">Dropdown</a>
+            <div class="dropdown-menu" *dropdownMenu>
+                <a class="dropdown-item" href="#one">one</a>
+                <a class="dropdown-item" href="#two">two</a>
+                <div role="separator" class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#three">three</a>
+            </div>
+        </li>
+    </ul>
+    <a class="navbar-brand" href="#">Navbar</a>
+
+</nav>
+
+<button type="button" class="btn btn-primary" tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+    Button with tooltip
+</button>
+
+<button type="button" class="btn btn-info" (click)="openModal(template)">Create template modal</button>
+
+<ng-template #template>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Modal</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        This is a modal.
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="modalRef.hide()">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+    </div>
+</ng-template>
+
+<app-product-form></app-product-form>
